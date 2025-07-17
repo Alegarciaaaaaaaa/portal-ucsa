@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Portal de Estudiantes - UCSA</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header, footer {
+      background: #f0f0f0;
+      padding: 10px;
+      text-align: center;
+    }
+    .container {
+      padding: 20px;
+    }
+    .menu-toggle {
+      cursor: pointer;
+      font-size: 24px;
+      margin-left: 10px;
+    }
+    .sidebar {
+      display: none;
+      background: #f9f9f9;
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin-top: 10px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 5px;
+      text-align: center;
+    }
+    .bold { font-weight: bold; }
+    .clickable { color: blue; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Logo_UCSA.png/320px-Logo_UCSA.png" alt="UCSA Logo" width="80">
+  <div>Bienvenido <span class="bold">6253497</span> |
+    <span class="clickable">Cambiar contraseña</span> |
+    <span class="clickable">Salir</span>
+  </div>
+  <div class="clickable menu-toggle">☰ Portal de Estudiantes</div>
+  <div id="sidebar" class="sidebar">
+    <div>Inscripciones</div>
+    <div>Derecho a examen</div>
+    <div>Notas</div>
+    <div>Estado de Cuentas</div>
+    <div>Buzón</div>
+  </div>
+</header>
+
+<div class="container">
+  <h3>Notas</h3>
+
+  <div>
+    <label>AÑO:</label>
+    <select>
+      <option selected>2025</option>
+    </select>
+    <label>PERIODO:</label>
+    <select>
+      <option selected>Marzo a Julio</option>
+    </select>
+  </div>
+
+  <h4>Detalle de asignaturas</h4>
+  <table>
+    <tr><th>Asignatura</th><th>Profesor</th></tr>
+    <tr><td>Cálculo I</td><td>Oscar Ariel Torales Decoud</td></tr>
+    <tr><td>Desarrollo Emprendedor</td><td>Nora Edith Lezcano</td></tr>
+    <tr><td>Física (Acústica y Óptica)</td><td>Faustino Artemio Sánchez G.</td></tr>
+    <tr><td>Física (Electricidad)</td><td>Faustino Artemio Sánchez G.</td></tr>
+    <tr><td>Inglés Técnico</td><td>María Lourdes Campuzano</td></tr>
+  </table>
+
+  <h4>Detalle de calificaciones</h4>
+  <table>
+    <tr>
+      <th>Asistencia</th><th>EP1</th><th>EP2</th><th>ER</th><th>TP</th><th>EF</th><th>Nota</th>
+    </tr>
+    <tr>
+      <td>100%</td><td>15</td><td>12</td><td>10</td><td>10</td><td id="ef1">15</td><td id="nota1">1</td>
+    </tr>
+    <tr>
+      <td>100%</td><td>20</td><td>16</td><td>10</td><td>10</td><td>41</td><td>4</td>
+    </tr>
+    <tr>
+      <td>94%</td><td>14</td><td>16</td><td></td><td>10</td><td></td><td></td>
+    </tr>
+    <tr>
+      <td>94%</td><td>16</td><td>17</td><td></td><td>7</td><td></td><td></td>
+    </tr>
+    <tr>
+      <td>82%</td><td>14</td><td>16</td><td>10</td><td>10</td><td>45</td><td>4</td>
+    </tr>
+  </table>
+
+  <h4>Nomenclatura de los periodos evaluativos</h4>
+  <ul>
+    <li>A: Ausente</li>
+    <li>F: Fraude</li>
+    <li>EP1: Examen Parcial 1</li>
+    <li>EP2: Examen Parcial 2</li>
+    <li>ER: Examen Recuperatorio</li>
+    <li>TP: Trabajo práctico</li>
+    <li>EF: Examen final</li>
+    <li>EE1: Examen Extraordinario 1</li>
+    <li>EE2: Examen Extraordinario 2</li>
+    <li>EE3: Examen Extraordinario 3</li>
+  </ul>
+</div>
+
+<footer>
+  <div>© UCSA 2025 | Asunción - Paraguay</div>
+  <div>📞 (+595) 021 221 103 al 106</div>
+  <div>📧 ucsa@ucsa.edu.py</div>
+</footer>
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const sidebar = document.getElementById('sidebar');
+
+  menuToggle.addEventListener('click', () => {
+    sidebar.style.display = sidebar.style.display === 'block' ? 'none' : 'block';
+    // Simular cambio de nota y EF
+    document.getElementById('nota1').textContent = '2';
+    document.getElementById('ef1').textContent = '20';
+  });
+</script>
+
+</body>
+</html>
